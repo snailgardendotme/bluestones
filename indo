@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colore casuale</title>
+</head>
+<body>
+  <button onclick="generaColore()">Genera colore</button>
+  <p id="codiceColore"></p>
+
+  <script>
+    function generaColore() {
+      const colore = "#" + Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
+
+      document.body.style.backgroundColor = colore;
+      document.getElementById("codiceColore").textContent = colore;
+    }
+
+    generaColore();
+  </script>
+</body>
+</html>
